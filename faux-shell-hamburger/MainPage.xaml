@@ -2,6 +2,23 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="faux_shell_hamburger.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="IconLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource Secondary}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+            </Style>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="Padding" Value="5,0" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ScrollView>
         <Grid
             RowDefinitions="50,*">
@@ -57,37 +74,37 @@
                 Grid.Row="1"
                 BackgroundColor="WhiteSmoke"
                 TranslationX="-250">
-                <HorizontalStackLayout HorizontalOptions="Start">
-                    <Button Text="✈" FontSize="Medium" WidthRequest="50"/>
-                    <Label Text="Flights" VerticalTextAlignment="Center" Padding="5,0" FontSize="Medium" />
+                <HorizontalStackLayout HorizontalOptions="Start" HeightRequest="50" >
+                    <Label Text="✈" Style="{StaticResource IconLabelStyle}"/>
+                    <Label Text="Flights" Style="{StaticResource LabelStyle}"/>
                     <HorizontalStackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnMenuItemTap" CommandParameter="Flights"/>
                     </HorizontalStackLayout.GestureRecognizers>
                 </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Start">
-                    <Button Text="🌞" FontSize="Medium" WidthRequest="50" />
-                    <Label Text="Beach Activities" VerticalTextAlignment="Center" Padding="5,0" FontSize="Medium" />
+                <HorizontalStackLayout HorizontalOptions="Start" HeightRequest="50" >
+                    <Label Text="🌞" Style="{StaticResource IconLabelStyle}"/>
+                    <Label Text="Beach Activities" Style="{StaticResource LabelStyle}"/>
                     <HorizontalStackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnMenuItemTap" CommandParameter="Beach Activities"/>
                     </HorizontalStackLayout.GestureRecognizers>
                 </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Start">
-                    <Button Text="✉" FontSize="Medium" WidthRequest="50" />
-                    <Label Text="Mail" VerticalTextAlignment="Center" Padding="5,0" FontSize="Medium"/>
+                <HorizontalStackLayout HorizontalOptions="Start" HeightRequest="50">
+                    <Label Text="✉" Style="{StaticResource IconLabelStyle}"/>
+                    <Label Text="Mail" Style="{StaticResource LabelStyle}"/>
                     <HorizontalStackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnMenuItemTap" CommandParameter="Mail"/>
                     </HorizontalStackLayout.GestureRecognizers>
                 </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Start">
-                    <Button Text="📸" FontSize="Medium" WidthRequest="50" />
-                    <Label Text="Photos" VerticalTextAlignment="Center" Padding="5,0" FontSize="Medium" />
+                <HorizontalStackLayout HorizontalOptions="Start" HeightRequest="50">
+                    <Label Text="📸" Style="{StaticResource IconLabelStyle}"/>
+                    <Label Text="Photos" Style="{StaticResource LabelStyle}"/>
                     <HorizontalStackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnMenuItemTap" CommandParameter="Photos"/>
                     </HorizontalStackLayout.GestureRecognizers>
                 </HorizontalStackLayout>
-                <HorizontalStackLayout HorizontalOptions="Start">
-                    <Button Text="🏆" FontSize="Medium" WidthRequest="50" />
-                    <Label Text="Awards" VerticalTextAlignment="Center" Padding="5,0" FontSize="Medium" />
+                <HorizontalStackLayout HorizontalOptions="Start" HeightRequest="50">
+                    <Label Text="🏆" Style="{StaticResource IconLabelStyle}"/>
+                    <Label Text="Awards" Style="{StaticResource LabelStyle}"/>
                     <HorizontalStackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnMenuItemTap" CommandParameter="Awards"/>
                     </HorizontalStackLayout.GestureRecognizers>

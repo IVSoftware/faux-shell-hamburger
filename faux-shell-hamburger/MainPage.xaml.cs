@@ -7,16 +7,13 @@ namespace faux_shell_hamburger
     {
         int count = 0;
         public MainPage() => InitializeComponent();
-
         private void OnCounterClicked(object sender, EventArgs e)
         {
             count++;
-
             if (count == 1)
                 CounterBtn.Text = $"Clicked {count} time";
             else
                 CounterBtn.Text = $"Clicked {count} times";
-
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
         private async void ShowFlyout(object sender, EventArgs e)
@@ -29,7 +26,6 @@ namespace faux_shell_hamburger
             await Flyout.TranslateTo(-250, 0, 250, Easing.SinInOut);
             Overlay.IsVisible = false;
         }
-
         private void OnMenuItemTap(object sender, TappedEventArgs e)
         {
             if(e.Parameter is string text)
@@ -50,7 +46,6 @@ namespace faux_shell_hamburger
             }
             HideFlyout(sender, e);
         }
-
         private void OnOverlayTap(object sender, TappedEventArgs e) =>
             HideFlyout(sender, e);
     }
